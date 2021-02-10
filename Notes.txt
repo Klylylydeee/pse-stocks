@@ -1,0 +1,33 @@
+ember install ember-cli-sass
+ --- then go to ember-cli-build.js to specifically set SASS
+
+Types of routes: Application route, Basic route, nested 
+                route, index route, dynamic route, 404 not found route
+
+>An application route is the home page (example: pse-stocks.com)
+
+>A basic route is a child of the application route 
+(example: pse-stocks.com/stocks) 
+ember g route stocks
+
+>A nested route is a sub child of the basic route 
+(example: pse-stocks.com/stocks/blue-chips) 
+ember g route stocks/blue-chips
+
+>An index route is basically the basic route but its 
+content wont be passed onti the child which is the nested route
+(example: pse-stocks.com/stocks) 
+ember g route stocks/index
+
+>A dynamic route is a page to display the same route to different items 
+(example: pse-stocks.com/item/123) 
+ember g route item 
+(this is also a basic route but remember to change its config in router.js and to set an model 
+to routes/item.js or routeName.js t)
+// { path: '/item/:item_id'}
+
+>A 404 not found or Wildcard route is to redirect unmanaged or non existing routes
+(example: pse-stocks.com/not-found) 
+ember g route not-found 
+(this is also a basic route but remember to change its config in router.js)
+// { path: '/*path'}
